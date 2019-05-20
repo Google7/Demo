@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="test.Signleton"/>
+<fullyQualifiedTypeName name="javax.lang.model.element.VariableElement"/>
+<fullyQualifiedTypeName name="test.JdbcDemo"/>
+<fullyQualifiedTypeName name="test.Animal"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.security.AlgorithmConstraints"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="test.Dog"/>
+</qualifiedTypeNameHistroy>

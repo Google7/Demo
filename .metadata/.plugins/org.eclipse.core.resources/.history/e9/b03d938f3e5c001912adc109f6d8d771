@@ -1,0 +1,16 @@
+package test;
+
+import java.sql.SQLException;
+
+public class Execute {
+
+	public static void main(String[] args)  throws SQLException {
+		String a1 = "abc";
+		String a2 = new String("abc");
+		System.out.print(a1 == a2);
+		System.out.print(a1.equals(a2));
+		
+		System.out.print(a1);
+		System.out.print(a2);
+	}
+}

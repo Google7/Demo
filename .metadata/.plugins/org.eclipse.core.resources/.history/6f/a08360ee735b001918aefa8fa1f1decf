@@ -1,0 +1,11 @@
+package test;
+
+public class Signleton {
+	private static Signleton signleton = new Signleton();
+	private Signleton(){
+		System.out.println(666);
+	}
+	public static Signleton getSignleton(){
+		return signleton;
+	}
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+E:\Workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2660035179.index
+\MavenDemo\src\main\resources
+D:\Workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2438517224.index
+\javaweb\src\main\resources
+E:\Workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2438517224.index
+\javaweb\src\main\resources

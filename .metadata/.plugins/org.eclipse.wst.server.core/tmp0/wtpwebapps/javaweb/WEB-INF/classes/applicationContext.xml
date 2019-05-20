@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+      
+	<context:component-scan base-package="test.service"></context:component-scan>
+	
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/testdb?useUnicode=true"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="password"></property>
+		<property name="maxPoolSize" value="20"></property>
+		<property name="minPoolSize" value="1"></property>
+		<property name="initialPoolSize" value="3"></property>
+		<property name="maxIdleTime" value="15"></property>
+	</bean>
+
+	<!-- 配置session工厂类，加载MyBatis配置文件和数据源的bean -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:sqlMapConfig.xml"></property>
+		<property name="dataSource" ref="dataSource"></property>      <!-- MaBatis配置文件 -->
+	</bean>
+
+	<!-- 配置扫描生成Dao层的bean -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="test.dao"></property>  <!-- 扫描包路径 -->
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+	</bean>
+	
+</beans>
